@@ -1,0 +1,1124 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Cucumber Framework</title>
+
+	<style type='text/css'>
+			
+      
+        
+      
+		
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1)" view='testrunner-logs-view'><i class='material-icons'>note</i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Cucumber Extent Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Feb 8, 2023 12:24:40 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.2</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@get</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>4</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Getting The Number of the patterns views from the Colorlover API XML Response and validate it it Greater than 4000</span>
+						<span class='test-time'>Feb 8, 2023 12:24:41 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='2' status='pass'>
+	<span class='duration right label'>0h 0m 5s+777ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">GET the Number of the patterns view</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@get</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">GET the Number of the patterns view</span>
+			
+				<ul class='steps'>
+					<li test-id='4' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given Color Lover Patterns API endpoint exists as "http://www.colourlovers.com/api/patterns" for test case "Demo test"</span>
+							<div class='pre'>pass :: Cucumber Hostname URL is :: http://www.colourlovers.com/api/patternshttp://www.colourlovers.com/api/patterns</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='5' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I send a valid Get Request to Get Patterns API XML File</span>
+							<div class='pre'>pass :: Request successfully processed</div>
+							<div class='pre'>Response is :: <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<patterns numResults="20" totalResults="1000">
+	<pattern>
+		<id>4370608</id>
+		<title><![CDATA[0479]]></title>
+		<userName><![CDATA[as warning]]></userName>
+		<numViews>5861</numViews>
+		<numVotes>16777215</numVotes>
+		<numComments>0</numComments>
+		<numHearts>0</numHearts>
+		<rank>0</rank>
+		<dateCreated>2014-07-06 03:13:02</dateCreated>
+		<colors>
+			<hex>FAF9CD</hex>
+			<hex>002A31</hex>
+			<hex>85A0AB</hex>
+			<hex>BCB203</hex>
+			<hex>322B33</hex>
+		</colors>
+		<description><![CDATA[<span style="color:#000000; font-size:medium; font-family:calibri, helvetica, sans-serif; letter-spacing:3pt;">Palette 0156 by as warning
+<a rel="nofollow"  href="/palette/2906368/" target="_blank" style="border:0;"><img src="/wallPaper/450x30/pw/2906368/s.png?o=0" style="width:80%; height:30px; border-radius:0px; border: 1px solid #000000; " /></a></span>]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/4370608/0479]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/4370/4370608.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/4370/4370608_0479.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/4370608</apiUrl>
+		<template>
+			<title><![CDATA[Color Me Your Colour]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/393304/Color_Me_Your_Colour]]></url>
+			<author>
+				<userName><![CDATA[Weirdy]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/Weirdy]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>5375475</id>
+		<title><![CDATA[Snow flowers]]></title>
+		<userName><![CDATA[Victor Milukov]]></userName>
+		<numViews>5895</numViews>
+		<numVotes>16777215</numVotes>
+		<numComments>2</numComments>
+		<numHearts>0</numHearts>
+		<rank>0</rank>
+		<dateCreated>2016-06-25 02:30:30</dateCreated>
+		<colors>
+			<hex>BFD5EA</hex>
+			<hex>7F9AAD</hex>
+			<hex>FFFFFF</hex>
+			<hex>3F4B5B</hex>
+			<hex>242424</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/4239539/Light_of_water"><img src="http://www.colourlovers.com/images/badges/p/4239/4239539_Light_of_water.png" style="width:240px;height:120px;border:0 none;" alt="Light of water" /></a><a href="http://www.colourlovers.com/pattern/template/23665/Mount_Abu"><img src="http://www.colourlovers.com/images/badges/pd/23/23665_Mount_Abu.png" style="width:240px;height:120px;border:0 none;" alt="Mount_Abu" /></a>]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/5375475/Snow_flowers]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/5375/5375475.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/5375/5375475_Snow_flowers.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/5375475</apiUrl>
+		<template>
+			<title><![CDATA[Mount Abu]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/23665/Mount_Abu]]></url>
+			<author>
+				<userName><![CDATA[ambu1959]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/ambu1959]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>5384670</id>
+		<title><![CDATA[Bloodlust]]></title>
+		<userName><![CDATA[Trixsta T]]></userName>
+		<numViews>9469</numViews>
+		<numVotes>16777215</numVotes>
+		<numComments>13</numComments>
+		<numHearts>0</numHearts>
+		<rank>0</rank>
+		<dateCreated>2016-07-06 18:00:19</dateCreated>
+		<colors>
+			<hex>0A0A0A</hex>
+			<hex>62A007</hex>
+			<hex>F60C0C</hex>
+			<hex>8E0707</hex>
+			<hex>5B2B2B</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/5384670/Bloodlust]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/5384/5384670.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/5384/5384670_Bloodlust.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/5384670</apiUrl>
+		<template>
+			<title><![CDATA[By Any Other Name]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/328600/By_Any_Other_Name]]></url>
+			<author>
+				<userName><![CDATA[praxicalidocious]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/praxicalidocious]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>5440905</id>
+		<title><![CDATA[mon amour je t'aime]]></title>
+		<userName><![CDATA[ellona]]></userName>
+		<numViews>10090</numViews>
+		<numVotes>16777215</numVotes>
+		<numComments>6</numComments>
+		<numHearts>0</numHearts>
+		<rank>0</rank>
+		<dateCreated>2016-08-25 01:33:17</dateCreated>
+		<colors>
+			<hex>000000</hex>
+			<hex>A60376</hex>
+			<hex>F15A18</hex>
+			<hex>FFDA17</hex>
+			<hex>22FFBC</hex>
+		</colors>
+		<description><![CDATA[]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/5440905/mon_amour_je_taime]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/5440/5440905.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/5440/5440905_mon_amour_je_taime.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/5440905</apiUrl>
+		<template>
+			<title><![CDATA[Though Far Away]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/440517/Though_Far_Away]]></url>
+			<author>
+				<userName><![CDATA[praxicalidocious]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/praxicalidocious]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>582552</id>
+		<title><![CDATA[saturday warmth]]></title>
+		<userName><![CDATA[logochic]]></userName>
+		<numViews>193837</numViews>
+		<numVotes>4888</numVotes>
+		<numComments>175</numComments>
+		<numHearts>4.5</numHearts>
+		<rank>1</rank>
+		<dateCreated>2009-08-22 10:25:54</dateCreated>
+		<colors>
+			<hex>FCEBB6</hex>
+			<hex>5E412F</hex>
+			<hex>F07818</hex>
+			<hex>78C0A8</hex>
+			<hex>F0A830</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/582552/saturday_warmth]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/582/582552.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/582/582552_saturday_warmth.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/582552</apiUrl>
+		<template>
+			<title><![CDATA[Lines]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/81/Lines]]></url>
+			<author>
+				<userName><![CDATA[COLOURlover]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/COLOURlover]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>1462099</id>
+		<title><![CDATA[Dulce Aroma]]></title>
+		<userName><![CDATA[GabsGiggles]]></userName>
+		<numViews>78419</numViews>
+		<numVotes>3938</numVotes>
+		<numComments>388</numComments>
+		<numHearts>0</numHearts>
+		<rank>2</rank>
+		<dateCreated>2011-05-04 17:27:09</dateCreated>
+		<colors>
+			<hex>F8F4D7</hex>
+			<hex>F4DEC2</hex>
+			<hex>F4B36C</hex>
+			<hex>E98977</hex>
+			<hex>F2B4A8</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/1462099/Dulce_Aroma]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/1462/1462099.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/1462/1462099_Dulce_Aroma.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/1462099</apiUrl>
+		<template>
+			<title><![CDATA[sunmeadow.656]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/65960/sunmeadow.656]]></url>
+			<author>
+				<userName><![CDATA[sunmeadow]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/sunmeadow]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>465753</id>
+		<title><![CDATA[Navaho]]></title>
+		<userName><![CDATA[miice]]></userName>
+		<numViews>144095</numViews>
+		<numVotes>3077</numVotes>
+		<numComments>110</numComments>
+		<numHearts>5</numHearts>
+		<rank>3</rank>
+		<dateCreated>2009-05-03 08:56:47</dateCreated>
+		<colors>
+			<hex>ECD078</hex>
+			<hex>D95B43</hex>
+			<hex>C02942</hex>
+			<hex>542437</hex>
+			<hex>53777A</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/465753/Navaho]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/465/465753.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/465/465753_Navaho.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/465753</apiUrl>
+		<template>
+			<title><![CDATA[8-bit]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/104/8-bit]]></url>
+			<author>
+				<userName><![CDATA[rotten]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/rotten]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>50713</id>
+		<title><![CDATA[pat]]></title>
+		<userName><![CDATA[florc]]></userName>
+		<numViews>92033</numViews>
+		<numVotes>2550</numVotes>
+		<numComments>53</numComments>
+		<numHearts>0</numHearts>
+		<rank>5</rank>
+		<dateCreated>2008-03-03 13:24:06</dateCreated>
+		<colors>
+			<hex>FFFFFF</hex>
+			<hex>F2EFEB</hex>
+			<hex>FAF5ED</hex>
+			<hex>EDE9E4</hex>
+			<hex>F0ECE9</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/50713/pat]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/50/50713.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/50/50713_pat.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/50713</apiUrl>
+		<template>
+			<title><![CDATA[Damesque]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/57/Damesque]]></url>
+			<author>
+				<userName><![CDATA[isotope.151]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/isotope.151]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>306013</id>
+		<title><![CDATA[(???)]]></title>
+		<userName><![CDATA[sugar!]]></userName>
+		<numViews>63557</numViews>
+		<numVotes>2380</numVotes>
+		<numComments>53</numComments>
+		<numHearts>5</numHearts>
+		<rank>6</rank>
+		<dateCreated>2008-12-06 10:18:57</dateCreated>
+		<colors>
+			<hex>F9CDAD</hex>
+			<hex>FE4365</hex>
+			<hex>FC9D9A</hex>
+			<hex>83AF9B</hex>
+			<hex>C8C8A9</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/306013/()]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/306/306013.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/306/306013_().png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/306013</apiUrl>
+		<template>
+			<title><![CDATA[Pattern 33]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/33/Pattern_33]]></url>
+			<author>
+				<userName><![CDATA[COLOURlover]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/COLOURlover]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>1101098</id>
+		<title><![CDATA[When We Parted]]></title>
+		<userName><![CDATA[sunmeadow]]></userName>
+		<numViews>52516</numViews>
+		<numVotes>2188</numVotes>
+		<numComments>66</numComments>
+		<numHearts>0</numHearts>
+		<rank>7</rank>
+		<dateCreated>2010-10-18 16:21:18</dateCreated>
+		<colors>
+			<hex>027B7F</hex>
+			<hex>FFA588</hex>
+			<hex>D62957</hex>
+			<hex>BF1E62</hex>
+			<hex>572E4F</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/1101098/When_We_Parted]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/1101/1101098.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/1101/1101098_When_We_Parted.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/1101098</apiUrl>
+		<template>
+			<title><![CDATA[More stripes]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/30538/More_stripes]]></url>
+			<author>
+				<userName><![CDATA[Northern Dancer]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/Northern%20Dancer]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>2290455</id>
+		<title><![CDATA[d u s k]]></title>
+		<userName><![CDATA[earlgrey]]></userName>
+		<numViews>44133</numViews>
+		<numVotes>2164</numVotes>
+		<numComments>81</numComments>
+		<numHearts>0</numHearts>
+		<rank>10</rank>
+		<dateCreated>2012-03-11 10:41:57</dateCreated>
+		<colors>
+			<hex>E7E4D5</hex>
+			<hex>C84648</hex>
+			<hex>FFF3DB</hex>
+			<hex>D3C8B4</hex>
+			<hex>703E3B</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/2290455/d_u_s_k]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/2290/2290455.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/2290/2290455_d_u_s_k.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/2290455</apiUrl>
+		<template>
+			<title><![CDATA[Branches #1]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/134923/Branches_1]]></url>
+			<author>
+				<userName><![CDATA[colorballa]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/colorballa]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>541926</id>
+		<title><![CDATA[Cuddle Attack]]></title>
+		<userName><![CDATA[a peace of mind]]></userName>
+		<numViews>54665</numViews>
+		<numVotes>2066</numVotes>
+		<numComments>37</numComments>
+		<numHearts>5</numHearts>
+		<rank>8</rank>
+		<dateCreated>2009-07-09 21:23:25</dateCreated>
+		<colors>
+			<hex>E8D3A9</hex>
+			<hex>E39B7D</hex>
+			<hex>6E6460</hex>
+			<hex>89B399</hex>
+			<hex>BCBFA3</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/541926/Cuddle_Attack]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/541/541926.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/541/541926_Cuddle_Attack.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/541926</apiUrl>
+		<template>
+			<title><![CDATA[Damesque]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/57/Damesque]]></url>
+			<author>
+				<userName><![CDATA[isotope.151]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/isotope.151]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>328710</id>
+		<title><![CDATA[Seldom Dared Dream]]></title>
+		<userName><![CDATA[Skyblue2u]]></userName>
+		<numViews>47490</numViews>
+		<numVotes>2001</numVotes>
+		<numComments>104</numComments>
+		<numHearts>5</numHearts>
+		<rank>9</rank>
+		<dateCreated>2009-01-02 15:43:00</dateCreated>
+		<colors>
+			<hex>BBC793</hex>
+			<hex>77CCA4</hex>
+			<hex>827551</hex>
+			<hex>F1EEC5</hex>
+			<hex>FECC99</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/1217510/Updated_Recipe?widths=1"><img src="http://www.colourlovers.com/images/badges/pw/1217/1217510_Updated_Recipe.png" style="width:240px;height:120px;border:0 none;" alt="Updated_Recipe" /></a>]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/328710/Seldom_Dared_Dream]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/328/328710.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/328/328710_Seldom_Dared_Dream.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/328710</apiUrl>
+		<template>
+			<title><![CDATA[Pattern 16]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/16/Pattern_16]]></url>
+			<author>
+				<userName><![CDATA[COLOURlover]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/COLOURlover]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>2503698</id>
+		<title><![CDATA[Jupiter's moons]]></title>
+		<userName><![CDATA[sugary]]></userName>
+		<numViews>33238</numViews>
+		<numVotes>1969</numVotes>
+		<numComments>101</numComments>
+		<numHearts>0</numHearts>
+		<rank>15</rank>
+		<dateCreated>2012-05-13 19:48:41</dateCreated>
+		<colors>
+			<hex>EFD88B</hex>
+			<hex>FE4D83</hex>
+			<hex>10C4C0</hex>
+			<hex>E5D3BB</hex>
+			<hex>433B50</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/2503698/Jupiters_moons]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/2503/2503698.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/2503/2503698_Jupiters_moons.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/2503698</apiUrl>
+		<template>
+			<title><![CDATA[Enamel buttons III]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/186947/Enamel_buttons_III]]></url>
+			<author>
+				<userName><![CDATA[yoksel]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/yoksel]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>89366</id>
+		<title><![CDATA[Prisca]]></title>
+		<userName><![CDATA[shsh]]></userName>
+		<numViews>66442</numViews>
+		<numVotes>1865</numVotes>
+		<numComments>60</numComments>
+		<numHearts>0</numHearts>
+		<rank>11</rank>
+		<dateCreated>2008-05-02 17:41:40</dateCreated>
+		<colors>
+			<hex>D07E0E</hex>
+			<hex>E9DEB0</hex>
+			<hex>2F615E</hex>
+			<hex>482C21</hex>
+			<hex>A73E2B</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/89366/Prisca]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/89/89366.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/89/89366_Prisca.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/89366</apiUrl>
+		<template>
+			<title><![CDATA[Pattern 49]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/49/Pattern_49]]></url>
+			<author>
+				<userName><![CDATA[COLOURlover]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/COLOURlover]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>1631873</id>
+		<title><![CDATA['fold' world]]></title>
+		<userName><![CDATA[HeringDevotee]]></userName>
+		<numViews>38863</numViews>
+		<numVotes>1850</numVotes>
+		<numComments>24</numComments>
+		<numHearts>0</numHearts>
+		<rank>12</rank>
+		<dateCreated>2011-07-10 12:58:56</dateCreated>
+		<colors>
+			<hex>2A0308</hex>
+			<hex>924F1B</hex>
+			<hex>E2AC3F</hex>
+			<hex>F8EDC6</hex>
+			<hex>7BA58D</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/1631873/fold_world]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/1631/1631873.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/1631/1631873_fold_world.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/1631873</apiUrl>
+		<template>
+			<title><![CDATA[Folded in]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/81936/Folded_in]]></url>
+			<author>
+				<userName><![CDATA[Anomalin]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/Anomalin]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>1684015</id>
+		<title><![CDATA[Office]]></title>
+		<userName><![CDATA[surpriseice]]></userName>
+		<numViews>53877</numViews>
+		<numVotes>1827</numVotes>
+		<numComments>71</numComments>
+		<numHearts>0</numHearts>
+		<rank>13</rank>
+		<dateCreated>2011-07-31 14:24:46</dateCreated>
+		<colors>
+			<hex>140D1A</hex>
+			<hex>42142A</hex>
+			<hex>FF2E5F</hex>
+			<hex>FFD452</hex>
+			<hex>FAEECA</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/1684015/Office]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/1684/1684015.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/1684/1684015_Office.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/1684015</apiUrl>
+		<template>
+			<title><![CDATA[Holographic]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/84906/Holographic]]></url>
+			<author>
+				<userName><![CDATA[Anomalin]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/Anomalin]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>1181271</id>
+		<title><![CDATA[japanese art 1]]></title>
+		<userName><![CDATA[Tzadkiel]]></userName>
+		<numViews>35227</numViews>
+		<numVotes>1780</numVotes>
+		<numComments>31</numComments>
+		<numHearts>0</numHearts>
+		<rank>14</rank>
+		<dateCreated>2010-12-04 12:03:23</dateCreated>
+		<colors>
+			<hex>EAC388</hex>
+			<hex>DD423E</hex>
+			<hex>3F2C26</hex>
+			<hex>A2A384</hex>
+			<hex>C5AD4B</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/1181271/japanese_art_1]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/1181/1181271.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/1181/1181271_japanese_art_1.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/1181271</apiUrl>
+		<template>
+			<title><![CDATA[Rainbow pixels ]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/40724/Rainbow_pixels]]></url>
+			<author>
+				<userName><![CDATA[Northern Dancer]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/Northern%20Dancer]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>136849</id>
+		<title><![CDATA[adorned with gold]]></title>
+		<userName><![CDATA[Skyblue2u]]></userName>
+		<numViews>61716</numViews>
+		<numVotes>1652</numVotes>
+		<numComments>251</numComments>
+		<numHearts>5</numHearts>
+		<rank>16</rank>
+		<dateCreated>2008-06-28 01:54:37</dateCreated>
+		<colors>
+			<hex>520039</hex>
+			<hex>A89447</hex>
+			<hex>CFB242</hex>
+			<hex>BF9D3E</hex>
+			<hex>520039</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/136849/adorned_with_gold]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/136/136849.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/136/136849_adorned_with_gold.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/136849</apiUrl>
+		<template>
+			<title><![CDATA[Pattern_0762]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/69/Pattern_0762]]></url>
+			<author>
+				<userName><![CDATA[COLOURlover]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/COLOURlover]]></url>
+			</author>
+		</template>
+	</pattern>
+	<pattern>
+		<id>1074</id>
+		<title><![CDATA[sucks you in]]></title>
+		<userName><![CDATA[technicolorrr]]></userName>
+		<numViews>74508</numViews>
+		<numVotes>1411</numVotes>
+		<numComments>65</numComments>
+		<numHearts>5</numHearts>
+		<rank>17</rank>
+		<dateCreated>2007-12-09 10:43:09</dateCreated>
+		<colors>
+			<hex>207791</hex>
+			<hex>115A70</hex>
+			<hex>0C4863</hex>
+			<hex>083A52</hex>
+			<hex>022B3B</hex>
+		</colors>
+		<description><![CDATA[<a href="http://www.colourlovers.com/palette/2285499/Nestled" target="_blank"><img src="http://www.colourlovers.com/images/badges/pw/2285/2285499_Nestled.png" style="width: 240px; height: 120px; border: 0 none;" alt="Nestled" /></a>
+<div style="width: 300px; text-align: center;"><a href="http://www.colourlovers.com/contests/moo/minicard/2285499" target="_blank" style="display: block; margin-bottom: 5px; width: 300px; height: 120px; -moz-box-shadow: 0 1px 4px #d1d1d1; -webkit-box-shadow: 0 1px 4px #d1d1d1; box-shadow: 0 1px 4px #d1d1d1; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=180, Color=]]></description>
+		<url><![CDATA[http://www.colourlovers.com/pattern/1074/sucks_you_in]]></url>
+		<imageUrl><![CDATA[http://static.colourlovers.com/images/patterns/1/1074.png]]></imageUrl>
+		<badgeUrl><![CDATA[http://www.colourlovers.com/images/badges/n/1/1074_sucks_you_in.png]]></badgeUrl>
+		<apiUrl>http://www.colourlovers.com/api/pattern/1074</apiUrl>
+		<template>
+			<title><![CDATA[Cell Phone]]></title>
+			<url><![CDATA[http://www.colourlovers.com/pattern/template/2/Cell_Phone]]></url>
+			<author>
+				<userName><![CDATA[COLOURlover]]></userName>
+				<url><![CDATA[http://www.colourlovers.com/lover/COLOURlover]]></url>
+			</author>
+		</template>
+	</pattern>
+</patterns></div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='6' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I try to verify the status code is "200"</span>
+							<div class='pre'>pass :: Status Code is :: 200</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='7' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I should see the Number of Views of Pattern "1" Greater Than "4000"</span>
+							<div class='pre'>Actual Value is  ::5895</div>
+							<div class='pre'>Expected Value Greater Than  ::4000</div>
+							<div class='pre'>pass 1 : Expected value : 4000 mathches with Actual Value : 5895</div>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@get</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 8, 2023 12:24:41 PM</td>
+										<td class='linked' test-id='3'>Getting The Number of the patterns views from the Colorlover API XML Response and validate it it Greater than 4000.GET the Number of the patterns view.GET the Number of the patterns view</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Feb 8, 2023 12:24:40 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Feb 8, 2023 12:24:46 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>5,930ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>user</td>
+								<td>Sharayu</td>
+							</tr>
+							<tr>
+								<td>os</td>
+								<td>Windows 10</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@get</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<div id='testrunner-logs-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>TestRunner Logs</h5>
+		
+		<div class='card-panel'>
+				Sample test runner output message
+		</div>
+	</div>
+</div>
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 1,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 4,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			
+      
+        $(document).ready(function() {
+        
+        });
+      
+		
+ 		</script>
+	</body>
+	
+</html>
